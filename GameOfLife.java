@@ -9,10 +9,10 @@ public class GameOfLife {
 
 	public static void main(String[] args) {
 		String fileName = args[0];
-		test1(fileName);
-		System.out.println();
-		test2(fileName);
-		test3(fileName, 5);
+		// test1(fileName);
+		// System.out.println();
+		// test2(fileName);
+		// test3(fileName, 5);
 		play(fileName);
 	}
 	
@@ -147,8 +147,8 @@ public class GameOfLife {
 	
 	// Prints the board. Alive and dead cells are printed as 1 and 0, respectively.
     public static void print(int[][] arr) {
-		for(int i = 1; i < arr[0].length - 1; i++) {
-			for(int j = 1; j < arr[0].length - 1; j++) {
+		for(int i = 1; i < arr.length - 1; i++) {
+			for(int j = 1; j < arr[i].length - 1; j++) {
 				System.out.printf("%3s", arr[i][j]);
 			}	
 			System.out.println();	
@@ -170,13 +170,7 @@ public class GameOfLife {
 		// Enables drawing graphics in memory and showing it on the screen only when
 		// the StdDraw.show function is called.
 		StdDraw.enableDoubleBuffering();
-		
-		// For each cell (i,j), draws a filled square of size 1 by 1 (remember that the canvas was 
-		// already scaled to the dimensions rows by cols, which were read from the data file). 
-		// Uses i and j to calculate the (x,y) location of the square's center, i.e. where it
-		// will be drawn in the overall canvas. If the cell contains 1, sets the square's color
-		// to black; otherwise, sets it to white. In the RGB (Red-Green-Blue) color scheme used by
-		// StdDraw, the RGB codes of black and white are, respetively, (0,0,0) and (255,255,255).
+	
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < cols; j++) {
 				int color = 255 * (1 - board[i][j]);
