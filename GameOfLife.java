@@ -76,6 +76,7 @@ public class GameOfLife {
 					if(eachLine.charAt(i) == 'x') {
 						board[count][i + 1] = 1; 	
 					}
+						// #feedback - you can check only for 'x', since the board already contains zeros (default value for an integer array).
 				    else if(eachLine.charAt(i) == '.') {
 						board[count][i + 1] = 0; 	
 					}
@@ -107,6 +108,7 @@ public class GameOfLife {
 	// Assumes that j is at least 1 and at most the number of columns in the board - 1. 
 	// Uses the count(board,i,j) function to count the number of alive neighbors.
 	public static int cellValue(int[][] board, int i, int j) {
+		// #feedback - to make the program more efficient, it is better to call count once and store it in a variable.
 			if(board[i][j] == 1) {
 				if(count(board, i, j) == 2 || count(board, i, j) == 3 ) {
 						return 1;
